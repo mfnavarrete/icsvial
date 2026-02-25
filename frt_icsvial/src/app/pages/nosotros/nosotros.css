@@ -1,0 +1,166 @@
+.nosotros-hero {
+  position: relative;
+  min-height: 200px;
+  background: linear-gradient(120deg, #1d2735 0%, #384252 60%, #4d596a 100%);
+}
+
+.nosotros-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(8, 13, 20, 0.45) 0%, rgba(8, 13, 20, 0.18) 55%, rgba(8, 13, 20, 0.08) 100%);
+}
+
+.who-we-are-section {
+  background: linear-gradient(135deg, #1e5a7d 0%, #2d7ba8 100%);
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+}
+
+.who-we-are-section h2 {
+  color: white;
+}
+
+.who-we-are-text {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: white;
+  text-align: justify;
+}
+
+.paragraph-wide {
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.ceo-image-wrapper {
+  position: relative;
+}
+
+.ceo-image {
+  width: 100%;
+  height: 420px;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.ceo-name-card {
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center !important;
+  min-width: 280px;
+}
+
+.ceo-name-card h2,
+.ceo-name-card p {
+  text-align: center !important;
+}
+
+.vision-mission-section {
+  background: #f8f9fa;
+}
+
+.vision-card,
+.mission-card {
+  padding: 2rem;
+  height: 100%;
+}
+
+.vision-title,
+.mission-title {
+  color: #1e5a7d;
+  font-size: 1.75rem;
+}
+
+.vision-text,
+.mission-text {
+  color: #1e5a7d;
+  line-height: 1.8;
+}
+
+.values-section {
+  background: linear-gradient(135deg, #1e5a7d 0%, #2d7ba8 100%);
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+}
+
+.values-section h2 {
+  text-align: center;
+}
+
+.value-card {
+  padding: 1.5rem;
+}
+
+.value-card h3 {
+  text-align: center;
+}
+
+.value-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.value-icon-wrapper i {
+  font-size: 2rem;
+  color: white;
+}
+
+.value-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+@media (max-width: 767.98px) {
+  .nosotros-hero {
+    min-height: 180px;
+  }
+
+  .who-we-are-section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .who-we-are-text {
+    font-size: 1rem;
+  }
+
+  .paragraph-wide {
+    font-size: 1rem;
+  }
+
+  .ceo-name-card {
+    position: static;
+    transform: none;
+    margin-top: 1rem;
+  }
+
+  .ceo-image {
+    height: 320px;
+  }
+
+  .vision-title,
+  .mission-title {
+    font-size: 1.5rem;
+  }
+
+  .values-section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}

@@ -1,0 +1,127 @@
+<section class="home-hero d-flex align-items-center" [style.background-image]="heroBackgroundImage">
+  <div class="home-hero-overlay"></div>
+  <div class="container position-relative py-5">
+    <div class="hero-content py-4">
+      <h1 class="display-4 fw-semibold text-white mb-4">{{ heroTitle }}</h1>
+      <div class="d-flex flex-wrap gap-3">
+        <a class="btn btn-light hero-cta" routerLink="/servicios">{{ heroPrimaryCta }}</a>
+        <a
+          class="btn btn-light hero-cta"
+          [href]="heroSecondaryCtaLink"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {{ heroSecondaryCta }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-section py-5">
+  <div class="container">
+    <div class="row g-0 align-items-stretch">
+      <div class="col-12 col-lg-6">
+        <div class="about-copy h-100">
+          <h2 class="display-6 text-white mb-4">{{ aboutTitle }}</h2>
+          <p class="about-text mb-4">{{ aboutText }}</p>
+          <a class="btn btn-light hero-cta" routerLink="/nosotros">{{ aboutCta }}</a>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <img class="about-image" [src]="spotlightImageUrl" [alt]="aboutTitle" width="900" height="700" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services-preview py-5">
+  <div class="container">
+    <h2 class="display-6 fw-semibold mb-4 text-center">
+      Nuestros <span class="fw-bold">servicios</span>
+    </h2>
+
+    @if (isServiciosLoading) {
+      <div class="d-flex align-items-center gap-3" role="status">
+        <div class="spinner-border text-primary" aria-hidden="true"></div>
+        <span class="text-secondary">Cargando servicios...</span>
+      </div>
+    } @else if (serviciosErrorMessage) {
+      <div class="alert alert-danger" role="alert">
+        {{ serviciosErrorMessage }}
+      </div>
+    } @else {
+      <div class="services-roll-wrapper mb-4">
+        @if (servicesOverflowing) {
+          <button class="services-scroll-btn" type="button" aria-label="Desplazar servicios a la izquierda" (click)="scrollServices(-1)">
+            <i class="bi bi-chevron-left" aria-hidden="true"></i>
+          </button>
+        }
+
+        <div #servicesScroller class="services-scroller" [class.services-scroller-centered]="!servicesOverflowing">
+          @for (servicio of serviciosDestacados; track servicio.id) {
+            <article class="service-slide">
+              <div class="service-card">
+                <img
+                  class="service-image"
+                  [src]="getImageUrl(servicio.imagen)"
+                  [alt]="getServiceImageAlt(servicio.nombre)"
+                  width="640"
+                  height="360"
+                />
+                <h3 class="service-title mt-3 mb-0">{{ servicio.nombre }}</h3>
+              </div>
+            </article>
+          }
+        </div>
+
+        @if (servicesOverflowing) {
+          <button class="services-scroll-btn" type="button" aria-label="Desplazar servicios a la derecha" (click)="scrollServices(1)">
+            <i class="bi bi-chevron-right" aria-hidden="true"></i>
+          </button>
+        }
+      </div>
+      <a class="btn btn-light hero-cta mx-auto d-table" routerLink="/servicios">{{ servicesCta }}</a>
+    }
+  </div>
+</section>
+
+<section #metricsSection class="metrics-section py-5">
+  <div class="container">
+    <div class="row g-4 text-center text-white">
+      <div class="col-12 col-md-4">
+        <h3 class="metric-label mb-2">Año<br />de fundación</h3>
+        <p class="metric-value mb-0">{{ foundationYearDisplay }}</p>
+      </div>
+      <div class="col-12 col-md-4">
+        <h3 class="metric-label mb-2">Profesionales<br />calificados</h3>
+        <p class="metric-value mb-0">{{ professionalsDisplay }}</p>
+      </div>
+      <div class="col-12 col-md-4">
+        <h3 class="metric-label mb-2">Proyectos<br />terminados</h3>
+        <p class="metric-value mb-0">{{ projectsDisplay }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="clients-section py-5">
+  <div class="container">
+    <h2 class="display-6 fw-semibold mb-4 text-center">
+      Nuestros <span class="fw-bold">clientes</span>
+    </h2>
+
+    @if (isClientesLoading) {
+      <div class="d-flex align-items-center gap-3" role="status">
+        <div class="spinner-border text-primary" aria-hidden="true"></div>
+        <span class="text-secondary">Cargando clientes...</span>
+      </div>
+    } @else if (clientesErrorMessage) {
+      <div class="alert alert-danger" role="alert">
+        {{ clientesErrorMessage }}
+      </div>
+    } @else {
+      <app-cliente-list [clientes]="clientes" [emptyMessage]="emptyMessage"></app-cliente-list>
+    }
+  </div>
+</section>

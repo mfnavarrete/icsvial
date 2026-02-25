@@ -1,0 +1,21 @@
+@if (clientes.length === 0) {
+  <div class="alert alert-secondary mb-0" role="status">
+    {{ emptyMessage }}
+  </div>
+} @else {
+  <div class="row g-4 justify-content-center clients-scroller">
+    @for (cliente of clientes; track cliente.id) {
+      <article class="col-6 col-md-4 col-lg-3 col-xl-3 d-flex align-items-center justify-content-center">
+        <div class="client-item">
+          <img
+            class="client-image"
+            [src]="getImageUrl(cliente.imagen)"
+            [alt]="cliente.nombre"
+            width="480"
+            height="320"
+          />
+        </div>
+      </article>
+    }
+  </div>
+}

@@ -1,0 +1,24 @@
+.page-hero {
+  position: relative;
+  min-height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.page-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(8, 13, 20, 0.45) 0%, rgba(8, 13, 20, 0.18) 55%, rgba(8, 13, 20, 0.08) 100%);
+}
+
+.page-hero-title {
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 767.98px) {
+  .page-hero {
+    min-height: 180px;
+  }
+}

@@ -1,0 +1,41 @@
+.client-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.client-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0;
+  background-color: transparent;
+}
+
+@media (max-width: 575.98px) {
+  .clients-scroller {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    justify-content: flex-start !important;
+    margin-inline: 0;
+    padding-bottom: 0.4rem;
+  }
+
+  .clients-scroller > article {
+    flex: 0 0 100%;
+    max-width: 100%;
+    scroll-snap-align: center;
+  }
+
+  .client-item {
+    height: 120px;
+  }
+
+  .client-image {
+    padding: 0;
+  }
+}

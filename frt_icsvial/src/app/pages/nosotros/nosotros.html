@@ -1,0 +1,66 @@
+<app-page-hero [title]="title" [backgroundImage]="heroBackgroundImage"></app-page-hero>
+
+<section class="who-we-are-section py-5">
+  <div class="container">
+    <h2 class="display-6 fw-bold text-center mb-4">{{ whoAreWeTitle }}</h2>
+    <p class="who-we-are-text mb-0">{{ whoAreWeText }}</p>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-12 col-lg-5">
+        <div class="ceo-image-wrapper">
+          <img src="/nosotros/ceo.png" alt="{{ ceoName }}" class="ceo-image" width="400" height="400" />
+          <div class="ceo-name-card">
+            <h2 class="h4 fw-bold mb-1">{{ ceoName }}</h2>
+            <p class="mb-0 text-muted">{{ ceoRole }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-7">
+        <p class="text-secondary paragraph-wide mb-3">{{ ceoTextFirst }}</p>
+        <p class="text-secondary paragraph-wide mb-0">{{ ceoTextSecond }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="vision-mission-section py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12 col-lg-6">
+        <div class="vision-card">
+          <h2 class="vision-title mb-3">Nuestra <span class="fw-bold">Visión</span></h2>
+          <p class="vision-text mb-0">{{ visionText }}</p>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="mission-card">
+          <h2 class="mission-title mb-3">Nuestra <span class="fw-bold">Misión</span></h2>
+          <p class="mission-text mb-0">{{ missionText }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="values-section py-5">
+  <div class="container">
+    <h2 class="display-6 fw-normal text-white text-center mb-5">Nuestros <span class="fw-bold">valores</span></h2>
+    <div class="row g-4">
+      @for (value of values; track value.title) {
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="value-card text-center">
+            <div class="value-icon-wrapper mb-3">
+              <i [class]="value.iconClass" aria-hidden="true"></i>
+            </div>
+            <h3 class="h5 fw-bold text-white mb-3">{{ value.title }}</h3>
+            <p class="value-description text-white mb-0">{{ value.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

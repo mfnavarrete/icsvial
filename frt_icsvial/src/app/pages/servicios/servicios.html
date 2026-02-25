@@ -1,0 +1,18 @@
+<app-page-hero [title]="title" [backgroundImage]="heroBackgroundImage"></app-page-hero>
+
+<section class="py-5">
+  <div class="container">
+    @if (isLoading) {
+      <div class="d-flex align-items-center justify-content-center gap-3 py-5" role="status">
+        <div class="spinner-border text-primary" aria-hidden="true"></div>
+        <span class="text-secondary">Cargando servicios...</span>
+      </div>
+    } @else if (errorMessage) {
+      <div class="alert alert-danger" role="alert">
+        {{ errorMessage }}
+      </div>
+    } @else {
+      <app-servicio-list [servicios]="servicios" [emptyMessage]="emptyMessage"></app-servicio-list>
+    }
+  </div>
+</section>

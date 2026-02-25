@@ -1,0 +1,38 @@
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+:root {
+  --icsvial-bg-soft: #f8f9fb;
+  --icsvial-text: #1f2937;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--icsvial-bg-soft);
+  color: var(--icsvial-text);
+  text-align: justify;
+}
+
+h1,
+h2,
+h3 {
+  text-align: left;
+  text-wrap: balance;
+}
+
+.home-hero h1,
+.nosotros-hero h1,
+.servicios-hero h1,
+.blog-hero h1,
+.contact-hero h1 {
+  text-align: center;
+}
+
+p {
+  text-wrap: pretty;
+}

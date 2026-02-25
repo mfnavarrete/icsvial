@@ -1,0 +1,27 @@
+@if (servicios.length === 0) {
+  <div class="alert alert-secondary text-center" role="status">
+    {{ emptyMessage }}
+  </div>
+} @else {
+  <div class="row g-4 justify-content-center">
+    @for (servicio of servicios; track servicio.id) {
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="service-card h-100">
+          <div class="service-card-image-wrapper">
+            <img
+              [src]="getImageUrl(servicio.imagen)"
+              [alt]="servicio.nombre"
+              class="service-card-image"
+              width="400"
+              height="300"
+            />
+          </div>
+          <div class="service-card-body">
+            <h3 class="service-card-title">{{ servicio.nombre }}</h3>
+            <p class="service-card-description">{{ servicio.descripcion }}</p>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+}

@@ -1,0 +1,103 @@
+.contact-hero {
+  position: relative;
+  min-height: 200px;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.14) 0, rgba(255, 255, 255, 0) 34%),
+    radial-gradient(circle at 82% 35%, rgba(255, 255, 255, 0.1) 0, rgba(255, 255, 255, 0) 36%),
+    linear-gradient(135deg, #2d3647 0%, #4c5566 100%);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(12, 24, 43, 0.58) 0%, rgba(12, 24, 43, 0.3) 45%, rgba(12, 24, 43, 0.12) 100%);
+}
+
+.contact-panel {
+  margin-top: -52px;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-card {
+  background-color: #fff;
+}
+
+.contact-info {
+  background-color: #ffffff;
+}
+
+.contact-icon {
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0a3b7a;
+  color: #fff;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.social-link {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0b0b0b;
+  color: #fff;
+  text-decoration: none;
+}
+
+.social-link i {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.map-wrapper {
+  min-height: 420px;
+  background-color: #edf1f6;
+  overflow: hidden;
+}
+
+.contact-map {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  border: 0;
+  display: block;
+}
+
+.map-cta {
+  position: absolute;
+  right: 2rem;
+  bottom: 1.75rem;
+  min-width: 180px;
+  font-weight: 600;
+  border-radius: 0;
+  z-index: 3;
+  color: #fff !important;
+  padding: 0.65rem 1.2rem;
+}
+
+@media (max-width: 991.98px) {
+  .contact-hero {
+    min-height: 180px;
+  }
+
+  .contact-panel {
+    margin-top: -24px;
+  }
+
+  .contact-hero .display-2 {
+    font-size: 3rem;
+  }
+
+  .map-cta {
+    right: 1rem;
+    bottom: 1rem;
+  }
+}

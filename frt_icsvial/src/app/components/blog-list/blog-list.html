@@ -1,0 +1,29 @@
+@if (posts.length === 0) {
+  <div class="alert alert-secondary mb-0" role="status">
+    {{ emptyMessage }}
+  </div>
+} @else {
+  <div class="row g-4 justify-content-center">
+    @for (post of posts; track post.id) {
+      <article class="col-12 col-md-6 col-xl-4 d-flex">
+        <div class="card border-0 shadow-sm w-100 overflow-hidden">
+          <img
+            class="blog-card-image"
+            [src]="getImageUrl(post.imagen)"
+            [alt]="getImageAlt(post.titulo)"
+            width="640"
+            height="360"
+          />
+          <div class="card-body p-4 d-flex flex-column">
+            <h2 class="h5 mb-2">{{ post.titulo }}</h2>
+            <p class="text-muted small mb-3">{{ getAuthorLabel(post.autor) }}</p>
+            <p class="text-secondary mb-4">{{ post.descripcion }}</p>
+            <a class="btn btn-dark mt-auto align-self-start" [routerLink]="['/blog', post.id]">
+              Ver blog completo
+            </a>
+          </div>
+        </div>
+      </article>
+    }
+  </div>
+}
